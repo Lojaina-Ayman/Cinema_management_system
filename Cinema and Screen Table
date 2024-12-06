@@ -1,0 +1,40 @@
+CREATE TABLE  Movies(
+    MovieId      NUMBER(4)   PRIMARY KEY,
+    Genre        VARCHAR2(25) CHECK (Genre IN ('Action', 'Drama', 'Comedy', 'Horror', 'Romance', 'Sci-Fi', 'Thriller')),
+    Show_date    DATE,
+    Duration     NUMBER(8,2),
+    Title        VARCHAR2(100),
+    Studio       VARCHAR2(50),
+    Dir_Fname    VARCHAR2(25),
+    Dir_Lname    VARCHAR2(25),
+    Country      VARCHAR2(50),
+    Language     VARCHAR2(50)
+    );
+                 
+                   
+INSERT INTO Movies(MovieId, Genre, Show_date, Duration, Title, Studio, Dir_Fname, Dir_Lname, Country, Language)
+VALUES (1, 'Sci-Fi', TO_DATE('2015-05-22', 'YYYY-MM-DD'), 130.00, 'Tomorrowland', 'Walt Disney Pictures', 'Brad', 'Bird', 'USA', 'English');         
+ 
+INSERT INTO Movies (MovieId, Genre, Show_date, Duration, Title, Studio, Dir_Fname, Dir_Lname, Country, Language)
+VALUES (2, 'Drama', TO_DATE('2006-06-02', 'YYYY-MM-DD'), 120.00, 'The Yacoubian Building', 'Film Clinic', 'Marwan', 'Hamed', 'Egypt', 'Arabic');
+
+INSERT INTO Movies (MovieId, Genre, Show_date, Duration, Title, Studio, Dir_Fname, Dir_Lname, Country, Language)
+VALUES (3, 'Thriller', TO_DATE('2016-12-06', 'YYYY-MM-DD'), 106.00, 'The Invisible Guest', 'A Contracorriente Films', 'Oriol', 'Paulo', 'Spain', 'Spanish'); 
+ 
+                   
+CREATE TABLE Screen(
+    ScreenNumber       NUMBER(4)  PRIMARY KEY,
+    ScreenCategory     VARCHAR2(25),
+    ScreenType         VARCHAR2(25),
+    ScreenCapacity     NUMBER(4)
+    );
+    
+    
+INSERT INTO Screen (ScreenNumber, ScreenCategory, ScreenType, ScreenCapacity)
+VALUES (1, 'Standard', '2D', 300);
+
+INSERT INTO Screen (ScreenNumber, ScreenCategory, ScreenType, ScreenCapacity)
+VALUES (2, 'IMAX', 'Laser', 350);
+
+INSERT INTO Screen (ScreenNumber, ScreenCategory, ScreenType, ScreenCapacity)
+VALUES (3, 'VIP', '3D', 200);
