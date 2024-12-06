@@ -1,1 +1,1 @@
-# Movie_recommendation_system
+# Cinema_management_system
